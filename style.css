@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Segoe UI, Arial, sans-serif;
+  background: #f5f8fc;
+}
+
+/* ================= HEADER ================= */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 30px;
+  background:#eaf3fb;
+  border-bottom:1px solid #dbe7f3;
+}
+
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.logo{
+  height:48px;
+  width:auto;
+}
+
+.title-wrap h1{
+  margin:0;
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+.title-wrap span{
+  font-size:12px;
+  color:#555;
+}
+
+.header-right{
+  text-align:right;
+}
+
+.date{
+  font-size:13px;
+  font-weight:600;
+}
+
+.time{
+  font-size:14px;
+  font-weight:700;
+}
+
+
+/* ================= KPI ================= */
+.kpi {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 30px;
+}
+
+.card {
+  padding: 20px;
+  color: #fff;
+  border-radius: 14px;
+}
+
+.blue { background: #4f86f7; }
+.green { background: #2ecc71; }
+.purple { background: #8e44ad; }
+
+.card h2 {
+  margin-top: 8px;
+  font-size: 28px;
+}
+
+/* ================= CHART ================= */
+.charts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 30px 30px;
+}
+
+/* 🔥 INI PALING PENTING */
+.panel {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  height: 360px;              /* WAJIB */
+  display: flex;
+  flex-direction: column;
+}
+
+.panel h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+/* WRAPPER CANVAS */
+.panel canvas {
+  flex: 1;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ================= TABLE ================= */
+.table-box {
+  padding: 0 30px 40px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+}
+
+th {
+  background: #f1f5f9;
+  text-align: left;
+}
+
+.open {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.close {
+  color: #dc2626;
+  font-weight: 600;
+}
