@@ -1,144 +1,239 @@
+/* ================= RESET ================= */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body {
-  margin: 0;
-  font-family: Segoe UI, Arial, sans-serif;
-  background: #f5f8fc;
+  background: #f4f6f9;
+  overflow-x: hidden;
 }
 
-/* ================= HEADER ================= */
-.header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px 30px;
-  background:#eaf3fb;
-  border-bottom:1px solid #dbe7f3;
+/* ================= COVER ================= */
+/* ================= COVER ================= */
+.cover {
+  height: 220px;                 /* tinggi cover FIX */
+  background-image: url("Cover atas.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center; /* ⬅️ KUNCI UTAMA */
+  
+  border-radius: 0 0 28px 28px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-start;       /* patokan dari ATAS */
 }
 
-.header-left{
-  display:flex;
-  align-items:center;
-  gap:14px;
+.cover-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.15)
+  );
+
+  padding: 28px 60px 0;          /* ⬅️ TEKS NAIK, TAPI GA MEPET */
 }
 
-.logo{
-  height:48px;
-  width:auto;
+.cover-content {
+  transform: translateY(-12px); /* ⬆️ teks naik */
 }
 
-.title-wrap h1{
-  margin:0;
-  font-size:20px;
-  font-weight:700;
-  letter-spacing:.5px;
+.cover-content h1 {
+  color: #fff;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.title-wrap span{
-  font-size:12px;
-  color:#555;
+.cover-content .subtitle {
+  margin-top: 6px;
+  color: rgba(255,255,255,.85);
+  font-size: 14px;
+  letter-spacing: .6px;
 }
 
-.header-right{
-  text-align:right;
+/* DATE TIME */
+.cover-datetime {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.85);
 }
 
-.date{
-  font-size:13px;
-  font-weight:600;
+.cover-datetime .dot {
+  opacity: .6;
 }
 
-.time{
-  font-size:14px;
-  font-weight:700;
+/* ================= DASHBOARD WRAPPER ================= */
+.dashboard-wrapper {
+  position: relative;
+  min-height: 100vh;
 }
 
+/* ================= DASHBOARD BACKGROUND ================= */
+.dashboard-bg {
+  position: fixed;              /* 🔥 KUNCI UTAMA */
+  inset: 0;
+  background: url("cover utama.jpg") center / cover no-repeat;
+  z-index: -1;
+  filter: blur(2px);
+  transform: scale(1.05);
+}
+
+/* ================= DASHBOARD CONTENT ================= */
+.dashboard-content {
+  position: relative;
+  padding: 40px;
+}
 
 /* ================= KPI ================= */
+/* ================= KPI CARDS ================= */
 .kpi {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px 30px;
+  gap: 22px;
+  margin-bottom: 32px;
 }
 
 .card {
-  padding: 20px;
-  color: #fff;
-  border-radius: 14px;
+  position: relative;
+  border-radius: 22px;
+  padding: 26px 28px;
+  overflow: hidden;
+
+  /* glass base */
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+
+  /* soft border */
+  border: 1px solid rgba(255,255,255,0.35);
+
+  /* soft glow */
+  box-shadow:
+    0 18px 35px rgba(0,0,0,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.35);
+
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.blue { background: #4f86f7; }
-.green { background: #2ecc71; }
-.purple { background: #8e44ad; }
+/* hover professional */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 28px 55px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+/* text */
+.card p {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .6px;
+  color: rgba(250, 243, 243, 0.75);
+}
 
 .card h2 {
-  margin-top: 8px;
-  font-size: 28px;
+  margin-top: 10px;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  color: #edeff4;
 }
 
-/* ================= CHART ================= */
+
+.blue {
+  background:
+    linear-gradient(135deg,
+      rgba(59,130,246,.45),
+      rgba(37,99,235,.35)
+    );
+}
+
+.green {
+  background:
+    linear-gradient(135deg,
+      rgba(34,197,94,.45),
+      rgba(22,163,74,.35)
+    );
+}
+
+.purple {
+  background:
+    linear-gradient(135deg,
+      rgba(168,85,247,.45),
+      rgba(147,51,234,.35)
+    );
+}
+
+
+/* ================= CHARTS ================= */
 .charts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 0 30px 30px;
+  gap: 22px;
 }
 
-/* 🔥 INI PALING PENTING */
+/* ================= PANEL (GLASS FIXED) ================= */
 .panel {
-  background: #fff;
-  padding: 15px;
-  border-radius: 12px;
-  height: 360px;              /* WAJIB */
-  display: flex;
-  flex-direction: column;
+  background: rgba(255,255,255,.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 20px;
+  padding: 18px 18px 32px;
+
+  box-shadow: 0 20px 45px rgba(0,0,0,.18);
+
+  height: 420px;        /* ⬅️ FIXED HEIGHT */
+  overflow: visible;   /* ⬅️ PENTING */
+  position: relative;
 }
+
+
 
 .panel h3 {
-  margin: 0 0 10px;
-  font-size: 15px;
+  margin-bottom: 12px;
+  font-size: 14px;
 }
 
-/* WRAPPER CANVAS */
+/* Canvas wajib full */
 .panel canvas {
-  flex: 1;
   width: 100% !important;
   height: 100% !important;
 }
 
 /* ================= TABLE ================= */
 .table-box {
-  padding: 0 30px 40px;
+  margin-top: 30px;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0 25px 55px rgba(0,0,0,.25);
 }
 
-table {
+.table-box table {
   width: 100%;
   border-collapse: collapse;
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
 }
 
 th, td {
-  padding: 10px;
-  border-bottom: 1px solid #eee;
+  padding: 12px;
   font-size: 13px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 th {
-  background: #f1f5f9;
+  background: rgba(243,244,246,.95);
   text-align: left;
-}
-
-.open {
-  color: #16a34a;
-  font-weight: 600;
-}
-
-.close {
-  color: #dc2626;
-  font-weight: 600;
 }

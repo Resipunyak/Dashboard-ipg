@@ -13,69 +13,81 @@
 
 <body>
 
-<header class="header">
-  <div class="header-left">
-    <img src="logo pt.jpg" class="logo">
-    <div class="title-wrap">
+  <!-- COVER -->
+<section class="cover">
+  <div class="cover-overlay">
+    <div class="cover-content">
       <h1>PRODUCT AND PROCESS DEVELOPMENT</h1>
-      <span>PT. INDOPRIMA GEMILANG</span>
+      <p class="subtitle">PT. INDOPRIMA GEMILANG</p>
+
+      <!-- DATE & TIME -->
+      <div class="cover-datetime">
+        <span id="currentDate"></span>
+        <span class="dot">•</span>
+        <span id="currentTime"></span>
+      </div>
     </div>
   </div>
-
-  <div class="header-right">
-    <div id="currentDate" class="date"></div>
-    <div id="currentTime" class="time"></div>
-  </div>
-</header>
+</section>
 
 
-<section class="kpi">
-  <div class="card blue">
-    <p>PROJECT IN PROGRESS</p>
-    <h2 id="kpiOpen">0</h2>
-  </div>
-  <div class="card green">
-    <p>TOTAL PROJECTS</p>
-    <h2 id="kpiTotal">0</h2>
-  </div>
-  <div class="card purple">
-    <p>TOTAL HARNESS QTY</p>
-    <h2 id="kpiQty">0</h2>
+
+  <!-- BACKGROUND SAJA -->
+  <div class="dashboard-bg"></div>
+
+  <!-- KONTEN DASHBOARD -->
+  <div class="dashboard-content">
+
+    <section class="kpi">
+      <div class="card blue">
+        <p>PROJECT IN PROGRESS</p>
+        <h2 id="kpiOpen">0</h2>
+      </div>
+      <div class="card green">
+        <p>TOTAL PROJECTS</p>
+        <h2 id="kpiTotal">0</h2>
+      </div>
+      <div class="card purple">
+        <p>TOTAL HARNESS QTY</p>
+        <h2 id="kpiQty">0</h2>
+      </div>
+    </section>
+
+    <section class="charts">
+      <div class="panel">
+        <h3>Status Delivery</h3>
+        <canvas id="statusChart"></canvas>
+      </div>
+      <div class="panel">
+        <h3>Customer Segmentation</h3>
+        <canvas id="segmentChart"></canvas>
+      </div>
+      <div class="panel panel-monthly">
+        <h3>Total Project Per Month</h3>
+        <canvas id="monthlyChart"></canvas>
+      </div>
+    </section>
+
+    <section class="table-box">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Customer</th>
+            <th>Part Number</th>
+            <th>Qty</th>
+            <th>Event</th>
+            <th>ETD</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="projectTable"></tbody>
+      </table>
+    </section>
+
   </div>
 </section>
 
-<section class="charts">
-  <div class="panel">
-    <h3>Status Delivery</h3>
-    <canvas id="statusChart"></canvas>
-  </div>
-  <div class="panel">
-    <h3>Customer Segmentation</h3>
-    <canvas id="segmentChart"></canvas>
-  </div>
-  <div class="panel">
-    <h3>Total Project Per Month</h3>
-    <canvas id="monthlyChart"></canvas>
-  </div>
-</section>
-
-<section class="table-box">
-<table>
-<thead>
-<tr>
-<th>No</th>
-<th>Customer</th>
-<th>Part Number</th>
-<th>Qty</th>
-<th>Event</th>
-<th>ETD</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody id="projectTable"></tbody>
-</table>
-</section>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
